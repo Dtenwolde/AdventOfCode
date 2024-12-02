@@ -18,17 +18,14 @@ def part2():
                 continue
 
             # Check if the report becomes safe by removing one level
-            safe_with_removal = False
             for i in range(len(values)):
                 modified_values = values[:i] + values[i + 1:]  # Remove the ith level
                 if is_safe(modified_values):
-                    safe_with_removal = True
+                    result += 1
                     break
 
-            if safe_with_removal:
-                result += 1
-
     print(result)
+
 def part1():
     result = 0
     with open('input.txt') as file:
